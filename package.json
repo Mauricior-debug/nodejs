@@ -5,7 +5,9 @@
   "main": "index.js",
   "author": "alphasec",
   "license": "MIT",
-   "dependencies": {
+  "dependencies": {
+    "mongoose": "^7.3.1",
+    "socket.io": "^4.7.1"
   },
   "scripts": {
     "start": "node index.js"
