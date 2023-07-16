@@ -1,5 +1,5 @@
 const http = require('http');
-const PORT = 3000;
+const port = process.env.PORT ||  3000;
 const sv = require("socket.io");
 const userModel = require("./models/userModel");
 const { default: mongoose } = require("mongoose");
@@ -178,6 +178,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+server.listen(port, () => {
+  console.log(`Server running at por:${port}`);
 });
