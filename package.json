@@ -10,7 +10,9 @@
     "socket.io": "^4.7.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+
   },
   "engines": {
     "node": ">=10.0.0"
