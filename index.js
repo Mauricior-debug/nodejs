@@ -31,6 +31,9 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to MongoDB", err);
   });
+  const activeUsers = {}; // Empty object to store active users
+  const rooms = {}; // Empty object to store game rooms
+
 // WebSocket connection handler
 io.on("connection", (socket) => {
   socket.setMaxListeners(30); // Increase the maximum to 20
@@ -134,7 +137,7 @@ io.on("connection", (socket) => {
     // Notify all users in the room about the current list of users.
     io.in(roomId).emit("roomUsers", Object.keys(rooms[roomId] || {}));
 
-    // Notify all users about the updated list of active users
+    // Notify all users about the updated list of active users active
     io.emit("activeUsers", Object.keys(activeUsers));
   });
 
